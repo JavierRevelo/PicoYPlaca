@@ -104,4 +104,5 @@ public class Predictor {
             return day = null;
         }
     }
+    
 }
