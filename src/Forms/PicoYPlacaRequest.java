@@ -46,6 +46,7 @@ public class PicoYPlacaRequest extends javax.swing.JFrame {
         jlblResult = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Pico y placa Predictor");
 
         jLabel1.setText("Plate:");
 

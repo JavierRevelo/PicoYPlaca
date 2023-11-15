@@ -92,8 +92,8 @@ public class Predictor {
     public Calendar identifyDayOfTheWeek() {
         Calendar day;
         try {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            Date date = sdf.parse(this.date);
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            Date date = dateFormat.parse(this.date);
 
             day = Calendar.getInstance();
             day.setTime(date);
