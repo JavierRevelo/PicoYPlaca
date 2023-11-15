@@ -56,7 +56,7 @@ public class Predictor {
         
     }
 
-    private boolean isWithinNotAllowedTime() {
+    public boolean isWithinNotAllowedTime() {
         try {
             //Creating the time format
             SimpleDateFormat format = new SimpleDateFormat("HH:mm");
@@ -76,7 +76,7 @@ public class Predictor {
         }
     }
 
-    private int isPlateAllowed() {
+    public int isPlateAllowed() {
         int lastDigit;
         try {
             // Gets the last digit of the plate number
@@ -89,7 +89,7 @@ public class Predictor {
         }
     }
 
-    private Calendar identifyDayOfTheWeek() {
+    public Calendar identifyDayOfTheWeek() {
         Calendar day;
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
