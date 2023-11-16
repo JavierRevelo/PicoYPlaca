@@ -7,6 +7,7 @@ This project implements a Pico y Placa predictor, determining whether a vehicle 
 - **Language:** Java
 - **JDK Version:** 20 (Ensure you have Java 20 installed on your machine)
 - **IDE:** Apache NetBeans IDE 17
+- **JUnit:** For test
 
 ## Features
 
