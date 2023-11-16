@@ -37,28 +37,26 @@ public class Predictor {
     }
 
     public boolean canDrive() {
-        int dayOfTheWeek = identifyDayOfTheWeek().getTime().getDay()+1;
+        int dayOfTheWeek = identifyDayOfTheWeek().getTime().getDay() + 1;
         int lastPlateNumber = isPlateAllowed();
         Integer[] conditions = dayConditions.get(dayOfTheWeek);
         if (dayOfTheWeek == Calendar.SUNDAY || dayOfTheWeek == Calendar.SATURDAY) {
             return true;
         } else {
             for (Integer condition : conditions) {
-                
+
                 if (condition == lastPlateNumber && isWithinNotAllowedTime()) {
                     return false;
-                } 
+                }
             }
-             
+
         }
         return true;
-                
-        
+
     }
 
     public boolean isWithinNotAllowedTime() {
         try {
-            //Creating the time format
             SimpleDateFormat format = new SimpleDateFormat("HH:mm");
             Date currentTime = format.parse(this.time);
 
@@ -67,9 +65,8 @@ public class Predictor {
 
             int hour = calendar.get(Calendar.HOUR_OF_DAY);
             int minute = calendar.get(Calendar.MINUTE);
-            // This part check if the time is within allowed hours (7:00 am - 9:30 am / 4:00 pm - 7:30 pm)
-            return (hour >= 7 && (hour < 9 || (hour == 9 && minute <= 30))) ||
-               (hour >= 16 && (hour < 19 || (hour == 19 && minute <= 30)));
+            return (hour >= 7 && (hour < 9 || (hour == 9 && minute <= 30)))
+                    || (hour >= 16 && (hour < 19 || (hour == 19 && minute <= 30)));
         } catch (ParseException e) {
             e.printStackTrace();
             return false;
@@ -79,7 +76,6 @@ public class Predictor {
     public int isPlateAllowed() {
         int lastDigit;
         try {
-            // Gets the last digit of the plate number
             lastDigit = Integer.parseInt(plateNumber.substring(plateNumber.length() - 1));
             return lastDigit;
         } catch (Exception e) {
@@ -104,5 +100,5 @@ public class Predictor {
             return day = null;
         }
     }
-    
+
 }

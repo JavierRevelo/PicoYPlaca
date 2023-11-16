@@ -171,23 +171,16 @@ public class PicoYPlacaRequest extends javax.swing.JFrame {
     }//GEN-LAST:event_jtfplateActionPerformed
 
     private void jbtnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSearchActionPerformed
-         // Get input from the user or any other source
-        System.out.print("Enter the license plate number (e.g., PBX-1234): ");
+
         String plateNumber = jtfplate.getText();
-        System.out.print("Enter the date (dd-mm-yyyy): ");
         String date = jspDay.getValue().toString()+"/"+jspMonth.getValue().toString()+"/"+jspYear.getValue().toString();
-        System.out.print("Enter the time (HH:MM): ");
         String time = jspHour.getValue().toString()+":"+jspHour.getValue().toString();
 
-        // Create an instance of the PicoYPlacaPredictor class
         Predictor predictor = new Predictor(plateNumber, date, time);
 
-        // Check if the car can be on the road
         if (predictor.canDrive()) {
-            System.out.println("The car can be on the road.");
             jlblResult.setText("The car can be on the road.");
         } else {
-            System.out.println("The car cannot be on the road.");
             jlblResult.setText("The car cannot be on the road.");
         }
     }//GEN-LAST:event_jbtnSearchActionPerformed
