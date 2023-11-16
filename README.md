@@ -37,7 +37,7 @@ This project implements a Pico y Placa predictor, determining whether a vehicle 
 3. After entering the required information, click the "Search" button.
 4. A message will appear on the left specifying whether the vehicle can be on the road or not.
 
-## Usage Examples oF Predictor class
+## Usage Examples of Predictor class
 
 ```java
 Predictor predictor = new Predictor("ABC123", "01/01/2023", "08:30");
